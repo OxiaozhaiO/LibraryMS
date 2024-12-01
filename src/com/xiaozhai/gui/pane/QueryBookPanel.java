@@ -3,7 +3,6 @@ package com.xiaozhai.gui.pane;
 import com.xiaozhai.entity.Book;
 import com.xiaozhai.entity.Event;
 import com.xiaozhai.entity.user.Borrow;
-import com.xiaozhai.entity.user.User;
 import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.BookService;
 import com.xiaozhai.service.BorrowService;
@@ -11,7 +10,6 @@ import com.xiaozhai.service.EventService;
 
 import java.awt.event.*;
 import java.sql.Date;
-import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -22,7 +20,7 @@ public class QueryBookPanel extends JPanel {
     public JButton search = new JButton("点击搜索");
     JTable table;
     DefaultTableModel taM;
-    final Object[] title = {"编号","书籍名称","书籍作者","库存数","书籍类型","语种","出版社","定价","备注"};
+    final Object[] titleWithCheckbox = {"选择", "书籍名称", "书籍作者", "库存数", "书籍类型", "语种", "出版社", "备注"};
     public JButton update = new JButton("跳到页面");
     public JButton previous = new JButton("上一页");
     public JTextField pageNum = new JTextField("1",5);
@@ -44,9 +42,6 @@ public class QueryBookPanel extends JPanel {
         this.setVisible(true);
     }
     private void addTable() {
-        // 修改表头，增加一个 "选择" 列
-        final Object[] titleWithCheckbox = {"选择", "书籍名称", "书籍作者", "库存数", "书籍类型", "语种", "出版社", "备注"};
-
         // 初始化表格模型，默认每行的第一列为 false (未选中)
         taM = new DefaultTableModel(this.dateInfo(this.getPageDate()), titleWithCheckbox) {
             @Override
@@ -107,8 +102,6 @@ public class QueryBookPanel extends JPanel {
             date[books.size()-1-i][5] = book.getLanguageType();
             date[books.size()-1-i][6] = book.getBookConcern();
             date[books.size()-1-i][7] = book.getRemark();
-            //date[i][1] = book.getId();
-            //date[i][7] = book.getMoney();
         }
         return date;
     }

@@ -124,14 +124,12 @@ public class UserDAO implements DAO<User> {
     @Override
     public List<User> list(int start, int count) {
         List<User> users = new ArrayList<>();
-
         String sql = "select * from user order by id desc limit ?,? ";
 
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setInt(1, start);
             ps.setInt(2, count);
-
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

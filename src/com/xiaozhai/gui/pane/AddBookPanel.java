@@ -71,17 +71,10 @@ public class AddBookPanel extends JPanel {
         bookConcern = new JComboBox<>(temp);
         bookConcern.setBounds(120,140,120,25);
         Concern.setBounds(240,140,110,25);
-//        Concern.setText((String)bookConcern.getSelectedItem());
 
         JLabel sumLab = new JLabel("本次录入本数：");
         sumLab.setBounds(360,140,90,25);
         sum.setBounds(450,140,80,25);
-
-//        JLabel moneyLab = new JLabel("书籍定价:");
-//        moneyLab.setBounds(30,180,80,25);
-//        money.setBounds(100,180,80,25);
-//        JLabel yuan = new JLabel("元");
-//        yuan.setBounds(180,180,20,25);
 
         JLabel remarkLab = new JLabel("备注");
         remarkLab.setBounds(240,180,50,25);
@@ -111,9 +104,7 @@ public class AddBookPanel extends JPanel {
         this.add(bookConcernLab);
         this.add(bookConcern);
         this.add(Concern);
-//        this.add(moneyLab);
         this.add(money);
-//        this.add(yuan);
         this.add(remarkLab);
         this.add(remark);
         this.add(save);
@@ -155,7 +146,6 @@ public class AddBookPanel extends JPanel {
                     book.setBookNumber(Integer.valueOf(sum.getText()));
                     book.setMoney(0);
                     book.setRemark(remark.getText());
-//                    System.out.println(book);
                     //存入数据库
                     BookService.add(book);
                 }
@@ -167,7 +157,6 @@ public class AddBookPanel extends JPanel {
                 languageTypeBox.setText("") ;
                 Concern.setText("");
                 sum.setText("");
-//                money.setText("");
                 remark.setText("");
                 booksNameValue.setText("");
                 bookNumber.setText("");

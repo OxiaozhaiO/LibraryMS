@@ -57,7 +57,7 @@ public class RemoveCardPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 if (Login.getIuser().getPower() == 1) {
-                    JOptionPane.showMessageDialog(new JFrame(), "普通用户不可添加书籍");
+                    JOptionPane.showMessageDialog(new JFrame(), "普通用户不可操作");
                     return;
                 }
                 addUsers(); // 仅更新模型
@@ -72,6 +72,5 @@ public class RemoveCardPanel extends JPanel {
             if (user.getPower() == 10) continue; // 只允许添加普通用户，不可显示管理员账户
             model.addElement(user.getUserName());
         }
-        // 不再重新创建 list
     }
 }

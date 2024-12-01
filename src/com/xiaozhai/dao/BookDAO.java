@@ -1,8 +1,6 @@
 package com.xiaozhai.dao;
-
 import com.xiaozhai.entity.Book;
 import com.xiaozhai.util.DBUtil;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +10,12 @@ public class BookDAO implements DAO<Book> {
     @Override
     public int getTotal() {
         int total = 0;
+        String sql = "select count(*) from book";
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement()) {
-
-            String sql = "select count(*) from book";
-
             ResultSet rs = s.executeQuery(sql);
             while (rs.next()) {
                 total = rs.getInt(1);
             }
-//            System.out.println("total:" + total);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,7 +37,6 @@ public class BookDAO implements DAO<Book> {
             ps.setString(6,book.getBookConcern());
             ps.setDouble(7,book.getMoney());
             ps.setString(8,book.getRemark());
-
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
@@ -79,10 +73,8 @@ public class BookDAO implements DAO<Book> {
 
     @Override
     public boolean delete(int id) {
+        String sql = "delete from book where id = " + id;
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
-
-            String sql = "delete from book where id = " + id;
-
             s.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -93,14 +85,10 @@ public class BookDAO implements DAO<Book> {
 
     @Override
     public Book get(int id) {
+        String sql = "select * from book where id = " + id;
         Book book = null;
-
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
-
-            String sql = "select * from book where id = " + id;
-
             ResultSet rs = s.executeQuery(sql);
-
             if (rs.next()) {
                 book = new Book();
                 String bookName = rs.getString("bookName");
@@ -135,20 +123,15 @@ public class BookDAO implements DAO<Book> {
     @Override
     public List<Book> list(int start, int count) {
         List<Book> books = new ArrayList<>();
-
         String sql = "select * from book order by id desc limit ?,? ";
-
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setInt(1, start);
             ps.setInt(2, count);
-
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
                 Book book = new Book();
-//                System.out.println("bookName");
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
                 String authorName = rs.getString("authorName");
@@ -182,7 +165,6 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-//                System.out.println("bookName");
                 book = new Book();
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
@@ -217,9 +199,7 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-//                System.out.println("id");
                 book = new Book();
-
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
                 String authorName = rs.getString("authorName");
@@ -252,7 +232,6 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-//                System.out.println("authorName");
                 Book book = new Book();
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
@@ -286,7 +265,6 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-//                System.out.println("booksType");
                 Book book = new Book();
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
@@ -320,7 +298,6 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-//                System.out.println("languageType");
                 Book book = new Book();
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");
@@ -354,7 +331,6 @@ public class BookDAO implements DAO<Book> {
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-//                System.out.println("bookConcern");
                 Book book = new Book();
                 int id = rs.getInt("id");
                 String bookName = rs.getString("bookName");

@@ -105,6 +105,6 @@ public class Book {
     @Override
     public String toString(){
         return "书名："+this.bookName+"，作者："+this.authorName+",数据类型："+this.booksType+",库存："+this.bookNumber
-                +",定价："+this.money+",出版社："+this.bookConcern;
+                +",出版社："+this.bookConcern;
     }
 }
