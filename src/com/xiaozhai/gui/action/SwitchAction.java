@@ -36,10 +36,12 @@ public class SwitchAction extends MouseAdapter {
             pane = RemoveCardPanel.getInstance();
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().libraryInfo){
-            System.out.println("libraryInfo");
+            MainPanel.getMainPanel().setTitle("制作信息");
+            pane = LibraryInfoPanel.getInstance();
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().lendQuery){
-            System.out.println("lendQuery");
+            MainPanel.getMainPanel().setTitle("所有事件");
+            pane = EventPanel.getEventPanel();
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().reviseCode){
             MainPanel.getMainPanel().setTitle("修改密码");

@@ -57,4 +57,9 @@ public class Event {
     public void setTime(Date time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "["+time+"] "+username +" "+ BorR + "《"+book+"》"  ;
+    }
 }
