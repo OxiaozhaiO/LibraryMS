@@ -22,4 +22,7 @@ public class BorrowService {
     public static boolean update(String book_name) {
         return dao.addNum(book_name);
     }
+    public static boolean returnBooks(List<String> book_name){
+        return dao.returnBooks(book_name);
+    }
 }

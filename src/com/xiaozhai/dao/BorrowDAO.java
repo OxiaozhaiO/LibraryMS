@@ -1,8 +1,9 @@
 package com.xiaozhai.dao;
 
-import com.xiaozhai.entity.Book;
+import com.xiaozhai.entity.Event;
 import com.xiaozhai.entity.user.Borrow;
 import com.xiaozhai.gui.frame.Login;
+import com.xiaozhai.service.EventService;
 import com.xiaozhai.util.DBUtil;
 
 import java.sql.*;
@@ -91,8 +92,8 @@ public class BorrowDAO {
         String sql = "select * from "+tableName+" order by id desc limit ?,? ";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
 
-            ps.setInt(2, start);
-            ps.setInt(3, count);
+            ps.setInt(1, start);
+            ps.setInt(2, count);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Borrow borrow = new Borrow();
@@ -106,5 +107,32 @@ public class BorrowDAO {
             e.printStackTrace();
         }
         return borrowList;
+    }
+    public boolean update(Borrow borrow) {
+        String sql = "update "+tableName+" set book_name = ?, nums = ? where id = ?";
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setString(1, borrow.getBookName());
+            ps.setInt(2, borrow.getNums());
+            ps.setInt(3, borrow.getId());
+            ps.executeUpdate();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean returnBooks(List<String> bookName) {
+        for(String str:bookName){
+            Borrow borrow = get(str);
+            if(borrow==null){ return false; }
+            if(borrow.getNums()>1) {
+                borrow.setNums(borrow.getNums() - 1);
+                update(borrow);
+            }else {
+                delete(borrow.getId());
+            }
+            EventService.add(new Event(Login.getIuser().getUserName(),"还了",str,new Date(System.currentTimeMillis())));
+        }
+        return true;
     }
 }

@@ -22,8 +22,9 @@ public class FoldableMenuAction extends MouseAdapter{
         FoldableMenuBar.getFoldableMenuBar().temp.addAll(FoldableMenuBar.getFoldableMenuBar().buttons);
         if (e.getSource() == FoldableMenuBar.getFoldableMenuBar().BookManage){
             //为图书管理添加菜单项
-            FoldableMenuBar.getFoldableMenuBar().temp.add(1,FoldableMenuItem.getFoldableMenuItem().addBook);
-            FoldableMenuBar.getFoldableMenuBar().temp.add(2,FoldableMenuItem.getFoldableMenuItem().queryBook);
+            FoldableMenuBar.getFoldableMenuBar().temp.add(1,FoldableMenuItem.getFoldableMenuItem().queryBook);
+            FoldableMenuBar.getFoldableMenuBar().temp.add(2,FoldableMenuItem.getFoldableMenuItem().returnBook);
+            FoldableMenuBar.getFoldableMenuBar().temp.add(3,FoldableMenuItem.getFoldableMenuItem().addBook);
         }
         if (e.getSource() == FoldableMenuBar.getFoldableMenuBar().libraryCard){
             //为借书卡管理添加菜单项

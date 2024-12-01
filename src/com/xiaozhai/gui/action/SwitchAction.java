@@ -23,6 +23,10 @@ public class SwitchAction extends MouseAdapter {
             MainPanel.getMainPanel().setTitle("正在添加图书...");
             pane = AddBookPanel.getAddBookPanel();
         }
+        if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().returnBook){
+            MainPanel.getMainPanel().setTitle("归还图书");
+            pane = ReturnBookPanel.getReturnBookPanel();
+        }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().queryBook){
             MainPanel.getMainPanel().setTitle("查询图书");
             pane = QueryBookPanel.getQueryBookPanel();
