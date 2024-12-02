@@ -50,6 +50,7 @@ public class ReturnBookPanel extends JPanel {
         // 添加还书按钮
         JButton returnButton = new JButton("还书"), reButton = new JButton("刷新");
         returnButton.addActionListener(e -> handleReturnBooks());
+        reButton.addActionListener(e -> handleReButton());
         returnButton.setBounds(200,420, 100, 30);
         reButton.setBounds(310,420, 100, 30);
         scrollPane.setBounds(0,0, 700,400);
@@ -101,5 +102,8 @@ public class ReturnBookPanel extends JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "归还失败，请重试！");
         }
+    }
+    private void handleReButton() {
+        loadData();
     }
 }

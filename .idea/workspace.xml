@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="172dadd9-5f99-48a2-b419-59e4c11557c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/BorrowDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/dao/BorrowDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/DateBuffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/CardLVPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/RemoveCardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/RemoveCardPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/ReturnBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/ReturnBookPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,6 +115,9 @@
       <workItem from="1733030508158" duration="1133000" />
       <workItem from="1733035784801" duration="4237000" />
       <workItem from="1733040151454" duration="851000" />
+      <workItem from="1733045323374" duration="418000" />
+      <workItem from="1733118320319" duration="311000" />
+      <workItem from="1733120281947" duration="385000" />
     </task>
     <servers />
   </component>
