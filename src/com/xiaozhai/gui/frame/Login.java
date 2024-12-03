@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 
 public class Login extends JFrame {
     private static User Iuser;
+    private JLabel Title;
     private Container c;
     private JLabel user;
     private JTextField username;
@@ -17,6 +18,7 @@ public class Login extends JFrame {
     private JPasswordField password;
     private JButton login;
     private JButton reset;
+    private Image bg;
 
     private static Login loginFrame = new Login();
 
@@ -35,30 +37,40 @@ public class Login extends JFrame {
         c = this.getContentPane();
         c.setLayout(null);
 
+        Title = new JLabel("图书管理系统");
+        Title.setBounds(100, 110, 400, 50);
+        Title.setFont(new Font("黑体", Font.BOLD, 24));
         user = new JLabel("用户名：");
-        user.setBounds(40,30,70,30);
+        user.setBounds(30,200,70,30);
         username = new JTextField(20);
-        username.setBounds(100,30,200,30);
+        username.setBounds(90,200,200,30);
         code = new JLabel("密码：");
-        code.setBounds(40,70,70,30);
+        code.setBounds(30,240,70,30);
         password = new JPasswordField(20);
-        password.setBounds(100,70,200,30);
+        password.setBounds(90,240,200,30);
         reset = new JButton("重置");
-        reset.setBounds(80,110,70,30);
+        reset.setBounds(80,300,70,30);
         login = new JButton("登录");
-        login.setBounds(220,110,70,30);
+        login.setBounds(220,300,70,30);
+        bg = new ImageIcon("./src/img/login.png").getImage().getScaledInstance(350, 420, Image.SCALE_FAST);
+        JLabel jLabel = new JLabel(new ImageIcon(bg));
+        jLabel.setBounds(0,0,350,420);
+        c.add(Title);
         c.add(user);
         c.add(username);
         c.add(code);
         c.add(password);
         c.add(reset);
         c.add(login);
-        this.setSize(350,220);
+        c.add(jLabel);
+        this.setSize(350,420);
         //使用工具类来让这个窗口居中
         PanelUtil.SetCenter(this);//这个类必须要在该窗口设置了高宽后才能使用
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+        StyleUtil.BorderStyle(username, password);
+        StyleUtil.BorderStyle(login, reset);
     }
     private void action(){
         //重置
