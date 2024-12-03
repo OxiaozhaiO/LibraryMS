@@ -33,9 +33,10 @@ public class MainFrame extends JFrame {
         this.addFoldableMenuBar();//加入菜单栏面板
         this.addContentPanel();//加入内容面板
         this.setSize(800,500);
-        PanelUtil.SetCenter(this);
+        PanelUtil.SetCenter(this);//使此窗口于屏幕中央显现
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+
     }
     //增加折叠菜单栏
     private void addFoldableMenuBar(){

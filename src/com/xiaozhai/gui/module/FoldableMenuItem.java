@@ -12,7 +12,7 @@ public class FoldableMenuItem {
 
     //新的菜单项
     public JButton addBook = new JButton("添加图书");
-    public JButton queryBook = new JButton("查询图书");
+    public JButton queryBook = new JButton("借阅/查询图书");
     public JButton returnBook = new JButton("归还图书");
     public JButton enrollCard = new JButton("借书证注册");
     public JButton delCard = new JButton("借书人删除");
