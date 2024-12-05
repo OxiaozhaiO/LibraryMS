@@ -7,6 +7,7 @@ import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.BookService;
 import com.xiaozhai.service.BorrowService;
 import com.xiaozhai.service.EventService;
+import com.xiaozhai.util.StyleUtil;
 
 import java.awt.event.*;
 import java.sql.Date;
@@ -40,6 +41,7 @@ public class QueryBookPanel extends JPanel {
 
         this.setSize(632,428);
         this.setVisible(true);
+        StyleUtil.BorderStyle(search, update, previous, next, borrow);
     }
     private void addTable() {
         // 初始化表格模型，默认每行的第一列为 false (未选中)

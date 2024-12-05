@@ -6,8 +6,8 @@ import java.awt.*;
 public class RoundBorder implements Border {
     private Color color;
 
-    private int arcH = 15;
-    private int arcW = 15;
+    private int arcH = 20;
+    private int arcW = 20;
     public RoundBorder() {
         this(Color.BLACK);
         // 如果实例化时，没有传值

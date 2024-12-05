@@ -49,9 +49,9 @@ public class Login extends JFrame {
         password = new JPasswordField(20);
         password.setBounds(90,240,200,30);
         reset = new JButton("重置");
-        reset.setBounds(80,300,70,30);
+        reset.setBounds(220,300,70,30);
         login = new JButton("登录");
-        login.setBounds(220,300,70,30);
+        login.setBounds(80,300,70,30);
         bg = new ImageIcon("./src/img/login.png").getImage().getScaledInstance(350, 420, Image.SCALE_FAST);
         JLabel jLabel = new JLabel(new ImageIcon(bg));
         jLabel.setBounds(0,0,350,420);

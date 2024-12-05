@@ -4,6 +4,7 @@ import com.xiaozhai.entity.Book;
 import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.BookService;
 import com.xiaozhai.util.PanelUtil;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -112,6 +113,7 @@ public class AddBookPanel extends JPanel {
         addListener();
         this.setSize(650,450);
         this.setVisible(true);
+        StyleUtil.BorderStyle(save, reset);
     }
     private void addListener(){
         save.addMouseListener(buttonAction);
@@ -160,7 +162,6 @@ public class AddBookPanel extends JPanel {
                 remark.setText("");
                 booksNameValue.setText("");
                 bookNumber.setText("");
-//                AddBookPanel.this.updateUI();
             }
         }
     };

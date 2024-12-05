@@ -5,13 +5,6 @@ import java.awt.*;
 
 public class StyleUtil {
     private StyleUtil(){}
-    public static void buttonStyle(JButton... buttons){
-        //是按钮变为透明
-        for (JButton button:buttons) {
-            button.setContentAreaFilled(false);
-            button.setBorder(new RoundBorder());
-        }
-    }
     public static void BorderStyle(JTextField ... textComponents){
         for (JTextField textComponent:textComponents) {
             textComponent.setOpaque(false);
@@ -20,9 +13,22 @@ public class StyleUtil {
     }
     public static void BorderStyle(JButton... buttons){
         for (JButton button:buttons) {
-            button.setBackground(new Color(255, 255, 255));
-            button.setBorder(new RoundBorder());
+            button.setContentAreaFilled(false); // 禁用默认背景绘制
+            button.setFocusPainted(false); // 去掉焦点框
+            button.setUI(new RoundedButtonUI()); // 设置圆角绘制
+            button.setBorder(new RoundBorder()); // 自定义边框
+            button.setBackground(new Color(255,255,255));
         }
     }
-
+    public static void BorderStyle(boolean flag, JButton... buttons){
+        for (JButton button:buttons) {
+            button.setContentAreaFilled(false); // 禁用默认背景绘制
+            button.setFocusPainted(false); // 去掉焦点框
+            button.setUI(new RoundedButtonUI()); // 设置圆角绘制
+            button.setBorder(new RoundBorder()); // 自定义边框
+            button.setBackground(new Color(0xB0B0B0));
+            button.setForeground(new Color(0xFFFFFF));
+            button.setFont(new Font("黑体", Font.PLAIN, 16));
+        }
+    }
 }

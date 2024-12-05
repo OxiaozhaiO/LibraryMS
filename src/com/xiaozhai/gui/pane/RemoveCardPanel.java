@@ -41,7 +41,7 @@ public class RemoveCardPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Login.getIuser().getPower() == 1) {
-                    JOptionPane.showMessageDialog(new JFrame(), "普通用户不可添加书籍");
+                    JOptionPane.showMessageDialog(new JFrame(), "普通用户不可操作");
                     return;
                 }
                 String userName = list.getSelectedValue();

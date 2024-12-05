@@ -31,7 +31,7 @@ public class FoldableMenuItem {
     }
     private void buttonStyle(){
         //使按钮透明
-        StyleUtil.buttonStyle(addBook,queryBook,returnBook,enrollCard,delCard,
+        StyleUtil.BorderStyle(addBook,queryBook,returnBook,enrollCard,delCard,
                 libraryInfo,lendQuery,reviseCode);
     }
 

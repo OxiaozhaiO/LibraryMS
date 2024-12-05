@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="172dadd9-5f99-48a2-b419-59e4c11557c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundedButtonUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/RemoveCardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/RemoveCardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundBorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundBorder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/StyleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/StyleUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/bg.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +134,11 @@
       <workItem from="1733199233711" duration="1000" />
       <workItem from="1733205559861" duration="80000" />
       <workItem from="1733209326764" duration="7574000" />
+      <workItem from="1733217105967" duration="32000" />
+      <workItem from="1733217598304" duration="1429000" />
+      <workItem from="1733381826951" duration="2446000" />
+      <workItem from="1733384344150" duration="247000" />
+      <workItem from="1733385266269" duration="489000" />
     </task>
     <servers />
   </component>

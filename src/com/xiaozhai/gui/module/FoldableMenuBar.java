@@ -32,7 +32,7 @@ public class FoldableMenuBar extends JPanel{
         this.add(query,3); buttons.add(query);
         this.add(system,4); buttons.add(system);
         this.addListener();
-        StyleUtil.BorderStyle(BookManage, libraryCard, library, query, system);
+        StyleUtil.BorderStyle(true, BookManage, libraryCard, library, query, system);
     }
 
     private void addListener(){
