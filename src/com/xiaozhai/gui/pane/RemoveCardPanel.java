@@ -3,6 +3,7 @@ package com.xiaozhai.gui.pane;
 import com.xiaozhai.entity.user.User;
 import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.UserService;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -35,7 +36,7 @@ public class RemoveCardPanel extends JPanel {
         list.setBounds(100, 100, 100, 300);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         this.add(list);
-
+        StyleUtil.BorderStyle(relistButton, button);
         // 添加按钮事件监听器
         button.addActionListener(new ActionListener() {
             @Override

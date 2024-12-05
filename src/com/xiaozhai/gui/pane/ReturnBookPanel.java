@@ -3,6 +3,7 @@ package com.xiaozhai.gui.pane;
 
 import com.xiaozhai.entity.user.Borrow;
 import com.xiaozhai.service.BorrowService;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,7 @@ public class ReturnBookPanel extends JPanel {
     private JTable table;
     private DefaultTableModel tableModel;
     private List<Boolean> selectedBooks; // 记录复选框的状态
+    private JButton returnButton = new JButton("还书"), reButton = new JButton("刷新");
 
     private ReturnBookPanel() {
         this.setLayout(null);
@@ -48,15 +50,16 @@ public class ReturnBookPanel extends JPanel {
         table.setFillsViewportHeight(true);
         JScrollPane scrollPane = new JScrollPane(table);
         // 添加还书按钮
-        JButton returnButton = new JButton("还书"), reButton = new JButton("刷新");
         returnButton.addActionListener(e -> handleReturnBooks());
         reButton.addActionListener(e -> handleReButton());
         returnButton.setBounds(200,420, 100, 30);
         reButton.setBounds(310,420, 100, 30);
         scrollPane.setBounds(0,0, 700,400);
+
         this.add(scrollPane);
         this.add(returnButton);
         this.add(reButton);
+        StyleUtil.BorderStyle(reButton, returnButton);
 
         // 加载数据
         loadData();

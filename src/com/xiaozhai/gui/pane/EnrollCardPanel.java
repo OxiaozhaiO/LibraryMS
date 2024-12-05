@@ -3,6 +3,7 @@ package com.xiaozhai.gui.pane;
 import com.xiaozhai.entity.user.User;
 import com.xiaozhai.service.UserService;
 import com.xiaozhai.util.PanelUtil;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -73,6 +74,7 @@ public class EnrollCardPanel extends JPanel {
 
         this.addListener();
         this.setVisible(true);
+        StyleUtil.BorderStyle(save, cancel);
     }
     private void addListener(){
         save.addMouseListener(new MouseAdapter() {

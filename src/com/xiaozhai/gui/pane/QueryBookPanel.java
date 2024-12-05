@@ -82,7 +82,8 @@ public class QueryBookPanel extends JPanel {
 
         this.addListener(); // 添加事件
         this.updateUI();
-    }
+        StyleUtil.BorderStyle(search, update, previous, next, borrow);
+   }
 
     /**
      * 构造带复选框的表格数据

@@ -3,6 +3,7 @@ package com.xiaozhai.gui.pane;
 import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.UserService;
 import com.xiaozhai.util.PanelUtil;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -45,6 +46,7 @@ public class ReviseCodePanel extends JPanel {
         this.add(cancel);
         this.add(point);
         this.addListener();
+        StyleUtil.BorderStyle(cancel, submit);
     }
     private void addListener(){
         submit.addMouseListener(new MouseAdapter() {

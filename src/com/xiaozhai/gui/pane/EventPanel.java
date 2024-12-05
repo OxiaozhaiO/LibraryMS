@@ -2,6 +2,7 @@ package com.xiaozhai.gui.pane;
 
 import com.xiaozhai.entity.Event;
 import com.xiaozhai.service.EventService;
+import com.xiaozhai.util.StyleUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class EventPanel extends JPanel {
         this.setEvents();
         this.add(events);
         this.add(reList);
+        StyleUtil.BorderStyle(reList);
         reList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

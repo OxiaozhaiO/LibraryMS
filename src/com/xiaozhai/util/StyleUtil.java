@@ -26,8 +26,8 @@ public class StyleUtil {
             button.setFocusPainted(false); // 去掉焦点框
             button.setUI(new RoundedButtonUI()); // 设置圆角绘制
             button.setBorder(new RoundBorder()); // 自定义边框
-            button.setBackground(new Color(0xB0B0B0));
-            button.setForeground(new Color(0xFFFFFF));
+            button.setBackground(new Color(0xD7D7D7));
+            button.setForeground(new Color(0x858585));
             button.setFont(new Font("黑体", Font.PLAIN, 16));
         }
     }
