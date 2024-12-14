@@ -6,7 +6,7 @@ public interface DAO<T>{
 	//得到表数据的条数
 	public int getTotal();
     //增加
-    public void add(T t);
+    public boolean add(T t);
     //修改
     public void update(T t);
     //删除

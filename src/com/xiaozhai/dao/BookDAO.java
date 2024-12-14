@@ -5,9 +5,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAO implements DAO<Book> {
+public class BookDAO {
 
-    @Override
     public int getTotal() {
         int total = 0;
         String sql = "select count(*) from book";
@@ -22,11 +21,10 @@ public class BookDAO implements DAO<Book> {
         return total;
     }
 
-    @Override
-    public void add(Book book) {
+    public boolean add(Book book) {
         String sql = "insert into " +
-                "book(BookName,AuthorName,BookNumber,BooksType,LanguageType,bookConcern,Money,remark) " +
-                "values(?,?,?,?,?,?,?,?)";
+                "book(BookName,AuthorName,BookNumber,BooksType,LanguageType,bookConcern,remark) " +
+                "values(?,?,?,?,?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
 
             ps.setString(1, book.getBookName());
@@ -35,24 +33,24 @@ public class BookDAO implements DAO<Book> {
             ps.setString(4,book.getBooksType());
             ps.setString(5,book.getLanguageType());
             ps.setString(6,book.getBookConcern());
-            ps.setDouble(7,book.getMoney());
-            ps.setString(8,book.getRemark());
+            ps.setString(7,book.getRemark());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 int id = rs.getInt(1);
                 book.setId(id);
             }
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
-    @Override
     public void update(Book book) {
         String sql = "update book " +
                 "set BookName= ?, AuthorName = ? , BookNumber = ?, booksType=? , LanguageType = ?," +
-                " bookConcern = ?, Money=?, remark=? where id = ?";
+                " bookConcern = ?, remark=? where id = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
             ps.setString(1, book.getBookName());
             ps.setString(2, book.getAuthorName());
@@ -60,9 +58,8 @@ public class BookDAO implements DAO<Book> {
             ps.setString(4,book.getBooksType());
             ps.setString(5,book.getLanguageType());
             ps.setString(6,book.getBookConcern());
-            ps.setDouble(7,book.getMoney());
-            ps.setString(8,book.getRemark());
-            ps.setInt(9,book.getId());
+            ps.setString(7,book.getRemark());
+            ps.setInt(8,book.getId());
             //执行SQL语句
             ps.execute();
 
@@ -71,7 +68,6 @@ public class BookDAO implements DAO<Book> {
         }
     }
 
-    @Override
     public boolean delete(int id) {
         String sql = "delete from book where id = " + id;
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
@@ -83,12 +79,12 @@ public class BookDAO implements DAO<Book> {
         }
     }
 
-    @Override
-    public Book get(int id) {
-        String sql = "select * from book where id = " + id;
+    public Book get(String name) {
+        String sql = "select * from book where bookName= ?";
         Book book = null;
-        try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
-            ResultSet rs = s.executeQuery(sql);
+        try (Connection c = DBUtil.getConnection(); PreparedStatement s = c.prepareStatement(sql);) {
+            s.setString(1, name);
+            ResultSet rs = s.executeQuery();
             if (rs.next()) {
                 book = new Book();
                 String bookName = rs.getString("bookName");
@@ -97,7 +93,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -105,9 +100,8 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
-                book.setId(id);
+                book.setId(rs.getInt("id"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -115,12 +109,10 @@ public class BookDAO implements DAO<Book> {
         return book;
     }
 
-    @Override
     public List<Book> list() {
         return list(0, Short.MAX_VALUE);
     }
 
-    @Override
     public List<Book> list(int start, int count) {
         List<Book> books = new ArrayList<>();
         String sql = "select * from book order by id desc limit ?,? ";
@@ -139,7 +131,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -147,7 +138,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -173,7 +163,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -181,7 +170,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -207,7 +195,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -215,7 +202,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -240,7 +226,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -248,7 +233,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -273,7 +257,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -281,7 +264,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -306,7 +288,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -314,7 +295,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);
@@ -339,7 +319,6 @@ public class BookDAO implements DAO<Book> {
                 String booksType = rs.getString("BooksType");
                 String languageType = rs.getString("LanguageType");
                 String bookConcern = rs.getString("BookConcern");
-                double money = rs.getDouble("Money");
                 String remark = rs.getString("Remark");
                 book.setBookName(bookName);
                 book.setAuthorName(authorName);
@@ -347,7 +326,6 @@ public class BookDAO implements DAO<Book> {
                 book.setBooksType(booksType);
                 book.setLanguageType(languageType);
                 book.setBookConcern(bookConcern);
-                book.setMoney(money);
                 book.setRemark(remark);
                 book.setId(id);
                 books.add(book);

@@ -146,10 +146,13 @@ public class AddBookPanel extends JPanel {
                     book.setLanguageType(languageTypeBox.getText());
                     book.setBookConcern(Concern.getText());
                     book.setBookNumber(Integer.valueOf(sum.getText()));
-                    book.setMoney(0);
                     book.setRemark(remark.getText());
                     //存入数据库
-                    BookService.add(book);
+                    if(BookService.add(book)){
+                        JOptionPane.showMessageDialog(new JFrame(), "添加成功");
+                    }else {
+                        JOptionPane.showMessageDialog(new JFrame(), "添加失败");
+                    }
                 }
             }
             if(e.getSource()==reset){

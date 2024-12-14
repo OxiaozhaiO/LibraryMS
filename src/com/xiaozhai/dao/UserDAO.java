@@ -28,7 +28,7 @@ public class UserDAO implements DAO<User> {
     }
 
     @Override
-    public void add(User user) {
+    public boolean add(User user) {
         String sql = "insert into user(username,password,power) values(?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
 
@@ -44,8 +44,10 @@ public class UserDAO implements DAO<User> {
             }
             String name = user.getUserName()+"_borrow";
             ps.execute("create table "+name+"(id int auto_increment  primary key, book_name varchar(255), nums int)  collate = utf8mb4_bin");
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 

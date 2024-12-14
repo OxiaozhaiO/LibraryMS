@@ -12,8 +12,8 @@ public class BookService {
         return dao.getTotal();
     }
     //增加
-    public static void add(Book book){
-        dao.add(book);
+    public static boolean add(Book book){
+        return dao.add(book);
     }
     //修改
     public static void update(Book book){
@@ -24,8 +24,8 @@ public class BookService {
         return dao.delete(id);
     }
     //获取
-    public static Book get(int id){
-        return dao.get(id);
+    public static Book get(String name){
+        return dao.get(name);
     }
     //查询
     public static List<Book> list(){

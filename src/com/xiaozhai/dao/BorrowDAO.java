@@ -1,8 +1,10 @@
 package com.xiaozhai.dao;
 
+import com.xiaozhai.entity.Book;
 import com.xiaozhai.entity.Event;
 import com.xiaozhai.entity.user.Borrow;
 import com.xiaozhai.gui.frame.Login;
+import com.xiaozhai.service.BookService;
 import com.xiaozhai.service.EventService;
 import com.xiaozhai.util.DBUtil;
 import java.sql.*;
@@ -121,8 +123,9 @@ public class BorrowDAO {
         }
     }
     public boolean returnBooks(List<String> bookName) {
-        for(String str:bookName){
-            Borrow borrow = get(str);
+        for(String name:bookName){
+            Borrow borrow = get(name);
+            //借阅信息更新
             if(borrow==null){ return false; }
             if(borrow.getNums()>1) {
                 borrow.setNums(borrow.getNums() - 1);
@@ -130,7 +133,12 @@ public class BorrowDAO {
             }else {
                 delete(borrow.getId());
             }
-            EventService.add(new Event(Login.getIuser().getUserName(),"还了",str,new Date(System.currentTimeMillis())));
+            //书籍归还，数量增加
+            Book book = BookService.get(name);
+            book.setBookNumber(book.getBookNumber()+1);
+            BookService.update(book);
+            //增加归还事件
+            EventService.add(new Event(Login.getIuser().getUserName(),"还了",name,new Date(System.currentTimeMillis())));
         }
         return true;
     }

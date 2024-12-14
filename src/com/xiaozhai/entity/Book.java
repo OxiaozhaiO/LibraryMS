@@ -8,7 +8,6 @@ public class Book {
     private String booksType;
     private String languageType;
     private String bookConcern;
-    private double money;
     private String remark;//备注
 
     @Override
@@ -85,14 +84,6 @@ public class Book {
 
     public void setBookConcern(String bookConcern) {
         this.bookConcern = bookConcern;
-    }
-
-    public double getMoney() {
-        return money;
-    }
-
-    public void setMoney(double money) {
-        this.money = money;
     }
 
     public String getRemark() {
