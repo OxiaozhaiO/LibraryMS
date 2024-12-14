@@ -20,36 +20,28 @@ public class SwitchAction extends MouseAdapter {
         MainPanel.getMainPanel().removeAll();
         //接下来根据按钮事件来添加功能面板
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().addBook){
-//            MainPanel.getMainPanel().setTitle("正在添加图书...");
-            pane = AddBookPanel.getAddBookPanel();
+            pane = AddBookPanel.getAddBookPanel();//添加图书
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().returnBook){
-//            MainPanel.getMainPanel().setTitle("归还图书");
-            pane = ReturnBookPanel.getReturnBookPanel();
+            pane = ReturnBookPanel.getReturnBookPanel();//归还图书
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().queryBook){
-//            MainPanel.getMainPanel().setTitle("查询图书");
-            pane = QueryBookPanel.getQueryBookPanel();
+            pane = QueryBookPanel.getQueryBookPanel();//查询图书
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().enrollCard){
-//            MainPanel.getMainPanel().setTitle("用户注册");
-            pane = EnrollCardPanel.getEnrollCardPanel();
+            pane = EnrollCardPanel.getEnrollCardPanel();//用户注册
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().delCard){
-//            MainPanel.getMainPanel().setTitle("删除用户(只能管理员操作)");
-            pane = RemoveCardPanel.getInstance();
+            pane = RemoveCardPanel.getInstance();//删除用户
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().libraryInfo){
-//            MainPanel.getMainPanel().setTitle("制作信息");
-            pane = LibraryInfoPanel.getInstance();
+            pane = LibraryInfoPanel.getInstance();//制作信息
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().lendQuery){
-//            MainPanel.getMainPanel().setTitle("所有事件");
-            pane = EventPanel.getEventPanel();
+            pane = EventPanel.getEventPanel();//所有事件
         }
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().reviseCode){
-//            MainPanel.getMainPanel().setTitle("修改密码");
-            pane=ReviseCodePanel.getReviseCodePane();
+            pane=ReviseCodePanel.getReviseCodePane();//修改密码
         }
         MainPanel.getMainPanel().add(pane);
         MainPanel.getMainPanel().add(pane);
