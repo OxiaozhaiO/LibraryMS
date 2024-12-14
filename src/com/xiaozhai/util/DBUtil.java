@@ -6,6 +6,6 @@ import java.util.ResourceBundle;
 
 public class DBUtil {
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://107.151.251.189:3306/java","testuser","123456");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/java","root","940727");
     }
 }
