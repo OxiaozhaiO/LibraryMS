@@ -8,9 +8,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements DAO<User> {
+public class UserDAO {
 
-    @Override
     public int getTotal() {
         int total = 0;
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
@@ -27,7 +26,6 @@ public class UserDAO implements DAO<User> {
         return total;
     }
 
-    @Override
     public boolean add(User user) {
         String sql = "insert into user(username,password,power) values(?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
@@ -51,7 +49,6 @@ public class UserDAO implements DAO<User> {
         }
     }
 
-    @Override
     public void update(User user) {
         String sql = "update user set username=?, password=? , power=? where id = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
@@ -67,7 +64,6 @@ public class UserDAO implements DAO<User> {
         }
     }
 
-    @Override
     public boolean delete(int id) {
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement()) {
             String sql = "delete from user where id = " + id;
@@ -92,7 +88,6 @@ public class UserDAO implements DAO<User> {
         }
     }
 
-    @Override
     public User get(int id) {
         User user = null;
 
@@ -118,12 +113,10 @@ public class UserDAO implements DAO<User> {
         return user;
     }
 
-    @Override
     public List<User> list() {
         return list(0, Short.MAX_VALUE);
     }
 
-    @Override
     public List<User> list(int start, int count) {
         List<User> users = new ArrayList<>();
         String sql = "select * from user order by id desc limit ?,? ";
