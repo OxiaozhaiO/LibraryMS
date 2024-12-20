@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Event {
     private int id;
     private String username;
-    private String BorR;
+    private String BorR;//借出或还书
     private String book;
     private Date time;
 

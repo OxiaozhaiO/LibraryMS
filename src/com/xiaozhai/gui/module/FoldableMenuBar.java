@@ -43,6 +43,8 @@ public class FoldableMenuBar extends JPanel{
         query.addMouseListener(action);
         system.addMouseListener(action);
     }
+
+    @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (bg != null) {

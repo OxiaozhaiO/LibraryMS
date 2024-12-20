@@ -1,13 +1,13 @@
 package com.xiaozhai.entity;
 
 public class Book {
-    private int id;
-    private String bookName;
-    private String authorName;
-    private int bookNumber;//图书库存
-    private String booksType;
-    private String languageType;
-    private String bookConcern;
+    private int id;//id
+    private String bookName;//书名
+    private String authorName;//作者
+    private int bookNumber;//余量
+    private String booksType;//类型
+    private String languageType;//语言
+    private String bookConcern;//出版
     private String remark;//备注
 
     @Override

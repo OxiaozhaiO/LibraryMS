@@ -45,7 +45,7 @@ public class BookService {
         temp.addAll(dao.queryFromName(Query));
         List<Book> books = new ArrayList<>();
         for (Book book : temp){
-            if(!books.contains(book)){
+            if(!books.contains(book)){//如果不包含book的话，就添加book
                 books.add(book);
             }
         }
