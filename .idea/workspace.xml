@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="172dadd9-5f99-48a2-b419-59e4c11557c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/startup/Bootstartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/startup/Bootstartup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +142,9 @@
       <workItem from="1734266078980" duration="2279000" />
       <workItem from="1734270130150" duration="134000" />
       <workItem from="1734348362625" duration="11000" />
-      <workItem from="1734687226245" duration="1340000" />
+      <workItem from="1734687226245" duration="1410000" />
+      <workItem from="1734759537973" duration="5000" />
+      <workItem from="1734759553109" duration="3043000" />
     </task>
     <servers />
   </component>

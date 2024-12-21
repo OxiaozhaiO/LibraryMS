@@ -1,14 +1,19 @@
 package com.xiaozhai.gui.pane;
 
 import com.xiaozhai.entity.Book;
+import com.xiaozhai.entity.Event;
+import com.xiaozhai.entity.user.Borrow;
+import com.xiaozhai.gui.frame.Login;
 import com.xiaozhai.service.BookService;
 import com.xiaozhai.service.BorrowService;
+import com.xiaozhai.service.EventService;
 import com.xiaozhai.util.StyleUtil;
 
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -160,7 +165,12 @@ public class QueryBookPanel extends JPanel {
             BookService.update(book);
 
             // 增加借书记录
-            BorrowService.add(bookName);
+            if (BorrowService.get(bookName) != null) {
+                BorrowService.update(bookName);
+            }else{
+                BorrowService.add(bookName);
+            }
+            EventService.add(new Event(Login.getIuser().getUserName(),"借了",bookName,new Date(System.currentTimeMillis())));
 
             JOptionPane.showMessageDialog(this, "成功借阅: " + bookName);
             updateTableData();  // 借书后刷新表格
