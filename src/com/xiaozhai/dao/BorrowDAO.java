@@ -70,6 +70,7 @@ public class BorrowDAO {
 
         return borrow;
     }
+    //增加借阅数量
     public boolean addNum(String book_name){
         String sql = "update "+tableName+" set nums = ? where book_name = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {

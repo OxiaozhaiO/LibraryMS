@@ -1,6 +1,7 @@
 package com.xiaozhai.entity.user;
 
 public class User implements UserPower {
+    //设置普通用户类的级别为user
     private final int power = USER;
     private int id;
     private String userName;

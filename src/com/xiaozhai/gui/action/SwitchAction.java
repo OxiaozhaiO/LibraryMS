@@ -9,8 +9,7 @@ import com.xiaozhai.gui.pane.*;
 import javax.swing.*;
 
 /*
- * 该类之作用如下
- * 点击按钮时，将前一panel删除，将新panel添加
+ * 这个类是小菜单的监听事件
  */
 public class SwitchAction extends MouseAdapter {
     private JPanel pane;
@@ -43,8 +42,9 @@ public class SwitchAction extends MouseAdapter {
         if (e.getSource() == FoldableMenuItem.getFoldableMenuItem().reviseCode){
             pane=ReviseCodePanel.getReviseCodePane();//修改密码
         }
+        //将新panel添加近MainPanel里
         MainPanel.getMainPanel().add(pane);
-        MainPanel.getMainPanel().add(pane);
+        //更新界面
         MainPanel.getMainPanel().updateUI();
     }
 }

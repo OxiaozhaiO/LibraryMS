@@ -19,11 +19,11 @@ public class EventPanel extends JPanel {
     }
     private EventPanel() {
         events.setEditable(false);
-        events.setBounds(0,0, 450, 600);
+        scroll.setBounds(0,0, 450, 600);
         reList.setBounds(500, 200, 100, 50);
         this.setLayout(null);
         this.setEvents();
-        this.add(events);
+        this.add(scroll);
         this.add(reList);
         StyleUtil.BorderStyle(reList);
         reList.addActionListener(new ActionListener() {
@@ -34,9 +34,12 @@ public class EventPanel extends JPanel {
         });
     }
     public void setEvents() {
+        //将上次的文本清除
         events.setText("");
+        //获取所有的事件
         List<Event> list = EventService.list();
         for(Event event : list) {
+            //一条一跳的加载进去
             String text = event.toString();
             events.append(text+"\n");
         }

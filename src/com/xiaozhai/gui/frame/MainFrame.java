@@ -11,7 +11,7 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     private static MainFrame mainFrame = new MainFrame();
 
-    private Container c = this.getContentPane();
+//    private Container c = this.getContentPane();
     public JMenu util;
 
     public static MainFrame getInstance(){
@@ -40,11 +40,11 @@ public class MainFrame extends JFrame {
     }
     //增加折叠菜单栏
     private void addFoldableMenuBar(){
-        c.add(FoldableMenuBar.getFoldableMenuBar(),BorderLayout.WEST);
+        this.add(FoldableMenuBar.getFoldableMenuBar(),BorderLayout.WEST);
     }
     //增加内容面板
     private void addContentPanel(){
-        c.add(MainPanel.getMainPanel());
+        this.add(MainPanel.getMainPanel());
     }
 
 }

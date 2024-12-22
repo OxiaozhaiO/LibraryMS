@@ -6,8 +6,8 @@ public class Event {
     private int id;
     private String username;
     private String BorR;//借出或还书
-    private String book;
-    private Date time;
+    private String book; //书名
+    private Date time; //借阅时间
 
     public Event(){}
     public Event(String username, String BorR, String book, Date time) {

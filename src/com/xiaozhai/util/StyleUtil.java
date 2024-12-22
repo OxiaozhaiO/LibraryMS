@@ -7,8 +7,8 @@ public class StyleUtil {
     private StyleUtil(){}
     public static void BorderStyle(JTextField ... textComponents){
         for (JTextField textComponent:textComponents) {
-            textComponent.setOpaque(false);
-            textComponent.setBorder(new RoundBorder());
+            textComponent.setOpaque(false);//设置透明
+            textComponent.setBorder(new RoundBorder());//设置圆角矩形
         }
     }
     public static void BorderStyle(JButton... buttons){

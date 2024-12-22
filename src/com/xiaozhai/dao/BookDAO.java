@@ -7,6 +7,7 @@ import java.util.List;
 
 public class BookDAO {
 
+    //获取书的总数
     public int getTotal() {
         int total = 0;
         String sql = "select count(*) from book";
@@ -21,6 +22,7 @@ public class BookDAO {
         return total;
     }
 
+    //添加书籍
     public boolean add(Book book) {
         String sql = "insert into " +
                 "book(BookName,AuthorName,BookNumber,BooksType,LanguageType,bookConcern,remark) " +
@@ -47,6 +49,7 @@ public class BookDAO {
         }
     }
 
+    //更新书籍
     public void update(Book book) {
         String sql = "update book " +
                 "set BookName= ?, AuthorName = ? , BookNumber = ?, booksType=? , LanguageType = ?," +
@@ -68,6 +71,7 @@ public class BookDAO {
         }
     }
 
+    //删除书籍
     public boolean delete(int id) {
         String sql = "delete from book where id = " + id;
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
@@ -79,6 +83,7 @@ public class BookDAO {
         }
     }
 
+    //获取图书
     public Book get(String name) {
         String sql = "select * from book where bookName= ?";
         Book book = null;
@@ -109,10 +114,12 @@ public class BookDAO {
         return book;
     }
 
+    //获取所有书籍信息
     public List<Book> list() {
         return list(0, Short.MAX_VALUE);
     }
 
+    //获取某一范围书籍信息
     public List<Book> list(int start, int count) {
         List<Book> books = new ArrayList<>();
         String sql = "select * from book order by id desc limit ?,? ";
@@ -148,6 +155,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照书名查找信息
     public List<Book> queryFromName(String bookN){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where bookName like '%"+bookN+"%'";
@@ -180,6 +188,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照id查
     public List<Book> queryFromId(String no){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where id like '%"+no+"%'";
@@ -211,6 +220,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照作者名查
     public List<Book> queryFromAuthorName(String authorN){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where authorName like '%"+authorN+"%'";
@@ -242,6 +252,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照书的类型查询
     public List<Book> queryFromBooksType(String booksTy){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where booksType like '%"+booksTy+"%'";
@@ -273,6 +284,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照书的语言查询
     public List<Book> queryFromLanguageType(String languageTy){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where languageType like '%"+languageTy+"%'";
@@ -304,6 +316,7 @@ public class BookDAO {
         }
         return books;
     }
+    //按照书的出版社查
     public List<Book> queryFromBookConcern(String bookCon){
         List<Book> books = new ArrayList<>();
         String sql = "select * from book where bookConcern like '%"+bookCon+"%'";

@@ -8,10 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelUtil {
-    /**
-     * 设置窗口居中显示
-     * @param window 要被居中的窗口
-     */
+    //设置窗口居中显示
     public static void SetCenter(Window window){
         //定义一个工具包
         Toolkit kit = Toolkit.getDefaultToolkit();
@@ -29,21 +26,12 @@ public class PanelUtil {
         window.setLocation((screenWidth-windowWidth)/2 , (screenHeight-windowHeight)/2);
     }
 
-    /**
-     * 判断输入框是否为空
-     * @param input 输入框
-     * @return true为空 false为不空
-     */
+    // 判断输入框是否为空
     public static boolean isNull(JTextField input){
         return input.getText().equals("");
     }
 
-    /**
-     * 通过数据库来验证输入的用户信息
-     * @param userName 需要验证的用户名
-     * @param password 需要验证的密码
-     * @return 这个用户的信息类，如果不匹配 返回值为空
-     */
+    // 通过数据库来验证输入的用户信息
     public static User getThisUser(String userName,String password){
         List<User> users = UserService.list();
         User iUser=null;
@@ -57,11 +45,7 @@ public class PanelUtil {
         return iUser;
     }
 
-    /**
-     * 判断该用户名是否重名
-     * @param userName 该用户名
-     * @return 重名返回true 否则为false
-     */
+    //判断该用户名是否重名
     public static boolean isSameName(String userName){
         List<User> users = UserService.list();
         for(User user:users){

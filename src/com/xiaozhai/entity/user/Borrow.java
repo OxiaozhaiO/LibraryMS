@@ -1,8 +1,11 @@
 package com.xiaozhai.entity.user;
 
 public class Borrow {
+    //借阅id
     private int id;
+    //书名
     private String bookName;
+    //数量
     private int nums;
 
     public Borrow() {}

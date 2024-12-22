@@ -3,7 +3,7 @@ package com.xiaozhai.startup;
 import com.xiaozhai.gui.frame.Login;
 
 public class Bootstartup {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         Login.getInstance();
     }
 }

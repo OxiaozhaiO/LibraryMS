@@ -10,7 +10,7 @@ import javax.swing.*;
 
 public class FoldableMenuItem {
 
-    //新的菜单项
+    //定义小菜单
     public JButton addBook = new JButton("添加图书");
     public JButton queryBook = new JButton("借阅/查询图书");
     public JButton returnBook = new JButton("归还图书");
@@ -25,14 +25,14 @@ public class FoldableMenuItem {
         return menuItem;
     }
     private FoldableMenuItem(){
+        //添加样式
         this.buttonStyle();
-        this.addAction(addBook,queryBook,returnBook,enrollCard,delCard,
-                libraryInfo,lendQuery,reviseCode);
+        //给每个按钮添加事件
+        this.addAction(addBook,queryBook,returnBook,enrollCard,delCard, libraryInfo,lendQuery,reviseCode);
     }
     private void buttonStyle(){
         //使按钮透明
-        StyleUtil.BorderStyle(addBook,queryBook,returnBook,enrollCard,delCard,
-                libraryInfo,lendQuery,reviseCode);
+        StyleUtil.BorderStyle(addBook,queryBook,returnBook,enrollCard,delCard, libraryInfo,lendQuery,reviseCode);
     }
 
     private void addAction(JButton ... buttons){

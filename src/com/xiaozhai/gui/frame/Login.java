@@ -11,7 +11,6 @@ import java.awt.event.MouseEvent;
 public class Login extends JFrame {
     private static User Iuser;
     private JLabel Title;
-    private Container c;
     private JLabel user;
     private JTextField username;
     private JLabel code;
@@ -34,8 +33,7 @@ public class Login extends JFrame {
     }
     private void init(){
         this.setTitle("登录界面");
-        c = this.getContentPane();
-        c.setLayout(null);
+        this.setLayout(null);
 
         Title = new JLabel("图书管理系统");
         Title.setBounds(100, 110, 400, 50);
@@ -55,14 +53,14 @@ public class Login extends JFrame {
         bg = new ImageIcon("./src/img/login.png").getImage().getScaledInstance(350, 420, Image.SCALE_FAST);
         JLabel jLabel = new JLabel(new ImageIcon(bg));
         jLabel.setBounds(0,0,350,420);
-        c.add(Title);
-        c.add(user);
-        c.add(username);
-        c.add(code);
-        c.add(password);
-        c.add(reset);
-        c.add(login);
-        c.add(jLabel);
+        this.add(Title);
+        this.add(user);
+        this.add(username);
+        this.add(code);
+        this.add(password);
+        this.add(reset);
+        this.add(login);
+        this.add(jLabel);
         this.setSize(350,420);
         //使用工具类来让这个窗口居中
         PanelUtil.SetCenter(this);//这个类必须要在该窗口设置了高宽后才能使用

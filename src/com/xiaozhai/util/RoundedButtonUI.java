@@ -9,15 +9,13 @@ public class RoundedButtonUI extends BasicButtonUI {
 
     public RoundedButtonUI() {}
 
-    public RoundedButtonUI(int arcWidth, int arcHeight) {
-        this.arcWidth = arcWidth;
-        this.arcHeight = arcHeight;
-    }
-
     @Override
     public void paint(Graphics g, JComponent c) {
+        //将容器c抽象成一个按钮
         AbstractButton button = (AbstractButton) c;
+        //获取c的模型
         ButtonModel model = button.getModel();
+        //转换为g2d
         Graphics2D g2d = (Graphics2D) g.create();
 
         // 根据按钮状态设置背景颜色
@@ -30,13 +28,11 @@ public class RoundedButtonUI extends BasicButtonUI {
         } else {
             g2d.setColor(button.getBackground()); // 默认背景颜色
         }
-
         // 绘制圆角背景
         g2d.fillRoundRect(0, 0, button.getWidth(), button.getHeight(), arcWidth, arcHeight);
-
         // 绘制按钮文字
         super.paint(g2d, c);
-
+        //释放资源
         g2d.dispose();
     }
 }

@@ -1,6 +1,7 @@
 package com.xiaozhai.entity.user;
 
 public class Manager extends User{
+    //设置管理员类的级别为manager
     private final int power=MANAGER;
 
     public Manager(){}

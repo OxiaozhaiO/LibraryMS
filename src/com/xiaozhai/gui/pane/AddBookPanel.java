@@ -110,9 +110,11 @@ public class AddBookPanel extends JPanel {
         this.add(remark);
         this.add(save);
         this.add(reset);
+        //添加按钮监听
         addListener();
         this.setSize(650,450);
         this.setVisible(true);
+        //设置样式
         StyleUtil.BorderStyle(save, reset);
     }
     private void addListener(){
@@ -122,6 +124,7 @@ public class AddBookPanel extends JPanel {
         bookType.addActionListener(comboBoxAction);
         languageType.addActionListener(comboBoxAction);
     }
+    //判断输入的是否为空
     private Boolean isNull(JTextField ... inputBox){
         for (JTextField input:inputBox){
             if(PanelUtil.isNull(input)==true){
@@ -133,6 +136,7 @@ public class AddBookPanel extends JPanel {
     MouseAdapter buttonAction = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
+            //如果点击了save按钮
             if(e.getSource()==save){
                 if(Login.getIuser().getPower() == 1) {
                     JOptionPane.showMessageDialog(new JFrame(), "普通用户不可添加书籍");
@@ -147,7 +151,7 @@ public class AddBookPanel extends JPanel {
                     book.setBookConcern(Concern.getText());
                     book.setBookNumber(Integer.valueOf(sum.getText()));
                     book.setRemark(remark.getText());
-                    //存入数据库
+                    //调用BookService的add接口，存入数据库
                     if(BookService.add(book)){
                         JOptionPane.showMessageDialog(new JFrame(), "添加成功");
                     }else {
@@ -168,15 +172,21 @@ public class AddBookPanel extends JPanel {
             }
         }
     };
+
+    //下拉列表的监听
     ActionListener comboBoxAction = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            //出版社
             if (e.getSource()==bookConcern){
+                //将文字设置为选择的那个
                 Concern.setText((String)bookConcern.getSelectedItem());
             }
+            //语言
             if (e.getSource()==languageType){
                 languageTypeBox.setText((String)languageType.getSelectedItem());
             }
+            //书的类型
             if (e.getSource()==bookType){
                 bookTypeBox.setText((String)bookType.getSelectedItem());
             }

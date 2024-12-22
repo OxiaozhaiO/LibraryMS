@@ -5,7 +5,6 @@ import java.awt.*;
 
 public class MainPanel extends JPanel{
     private static MainPanel mainPanel = new MainPanel();
-    private Container c;
 
     public static MainPanel getMainPanel(){
         return mainPanel;
