@@ -4,6 +4,7 @@
     <root id="archive" name="LibraryMS.jar">
       <element id="module-output" name="LibraryMS" />
       <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/mysql-connector-j-9.0.0.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/img" />
     </root>
   </artifact>
 </component>
