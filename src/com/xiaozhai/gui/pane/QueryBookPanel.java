@@ -121,7 +121,9 @@ public class QueryBookPanel extends JPanel {
         borrow.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
                 List<String> selectedBooks = new ArrayList<>();
+
                 // 遍历表格，获取所有选中的书籍
                 for (int i = 0; i < table.getRowCount(); i++) {
                     Boolean isSelected = (Boolean) table.getValueAt(i, 0);
@@ -130,7 +132,6 @@ public class QueryBookPanel extends JPanel {
                         selectedBooks.add(bookName);
                     }
                 }
-
                 if (selectedBooks.isEmpty()) {
                     JOptionPane.showMessageDialog(new JFrame(), "没有选中任何书籍！");
                     return;
@@ -172,10 +173,10 @@ public class QueryBookPanel extends JPanel {
             }
             EventService.add(new Event(Login.getIuser().getUserName(),"借了",bookName,new Date(System.currentTimeMillis())));
 
-            JOptionPane.showMessageDialog(this, "成功借阅: " + bookName);
+            JOptionPane.showMessageDialog(this, "成功借阅: 《" + bookName+"》");
             updateTableData();  // 借书后刷新表格
         } else {
-            JOptionPane.showMessageDialog(this, "库存不足，无法借阅: " + bookName);
+            JOptionPane.showMessageDialog(this, "库存不足，无法借阅: 《" + bookName+"》");
         }
     }
 

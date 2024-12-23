@@ -6,30 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="172dadd9-5f99-48a2-b419-59e4c11557c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6c5a650-3da3-4ecc-9f6c-f378658e2dd3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c6c5a650-3da3-4ecc-9f6c-f378658e2dd3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/dao/BorrowDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/dao/BorrowDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/Borrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/UserPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/entity/user/UserPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/InputError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/InputError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/frame/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/module/FoldableMenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/EventPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/EventPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/LibraryInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/LibraryInfoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/startup/Bootstartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/startup/Bootstartup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/PanelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/PanelUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundBorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundBorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundedButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/RoundedButtonUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/util/StyleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/util/StyleUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +156,11 @@
       <workItem from="1734866726638" duration="204000" />
       <workItem from="1734866938504" duration="155000" />
       <workItem from="1734870486321" duration="240000" />
+      <workItem from="1734927662103" duration="3670000" />
+      <workItem from="1734931897511" duration="393000" />
+      <workItem from="1734934172649" duration="7000" />
+      <workItem from="1734936010552" duration="82000" />
+      <workItem from="1734940569440" duration="3219000" />
     </task>
     <servers />
   </component>

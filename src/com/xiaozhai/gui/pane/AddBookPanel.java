@@ -152,7 +152,9 @@ public class AddBookPanel extends JPanel {
                     book.setBookNumber(Integer.valueOf(sum.getText()));
                     book.setRemark(remark.getText());
                     //调用BookService的add接口，存入数据库
-                    if(BookService.add(book)){
+                    if(Integer.parseInt(sum.getText()) < 0){
+                        JOptionPane.showMessageDialog(new JFrame(), "你家数量是负数啊？");
+                    } else if(BookService.add(book)){
                         JOptionPane.showMessageDialog(new JFrame(), "添加成功");
                     }else {
                         JOptionPane.showMessageDialog(new JFrame(), "添加失败");
