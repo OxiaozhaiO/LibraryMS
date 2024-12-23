@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="172dadd9-5f99-48a2-b419-59e4c11557c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c6c5a650-3da3-4ecc-9f6c-f378658e2dd3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c6c5a650-3da3-4ecc-9f6c-f378658e2dd3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/action/SwitchAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/AddBookPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaozhai/gui/pane/QueryBookPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +157,7 @@
       <workItem from="1734934172649" duration="7000" />
       <workItem from="1734936010552" duration="82000" />
       <workItem from="1734940569440" duration="3219000" />
+      <workItem from="1734943821191" duration="1339000" />
     </task>
     <servers />
   </component>
