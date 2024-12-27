@@ -13,6 +13,9 @@ public class BookService {
     }
     //增加
     public static boolean add(Book book){
+        if(dao.get(book.getBookName()) != null){
+            return false;
+        }
         return dao.add(book);
     }
     //修改
